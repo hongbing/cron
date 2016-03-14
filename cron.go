@@ -185,6 +185,7 @@ func (c *Cron) Stop() {
 	}
 	c.stop <- struct{}{}
 	c.running = false
+	c.entries = nil // clear all data
 }
 
 // entrySnapshot returns a copy of the current cron entry list.
